@@ -163,7 +163,7 @@ export default async (
     name: 'preview',
     mode: isProd ? 'production' : 'development',
     devtool: 'cheap-module-source-map',
-    entry: entries,
+    entry: [...entries, 'webpack-hot-middleware/client?path=/__webpack_hmr'],
     output: {
       path: resolve(process.cwd(), outputDir),
       filename: isProd ? '[name].[contenthash:8].iframe.bundle.js' : '[name].iframe.bundle.js',
