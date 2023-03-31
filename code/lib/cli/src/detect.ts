@@ -19,6 +19,8 @@ import type { JsPackageManager, PackageJsonWithMaybeDeps } from './js-package-ma
 const viteConfigFiles = ['vite.config.ts', 'vite.config.js', 'vite.config.mjs'];
 const webpackConfigFiles = ['webpack.config.js'];
 
+const rspackConfigFiles = ['rspack.config.ts', 'rspack.config.js'];
+
 const hasDependency = (
   packageJson: PackageJsonWithMaybeDeps,
   name: string,
@@ -167,7 +169,7 @@ export async function detectLanguage(packageManager: JsPackageManager) {
 
   const isTypescriptDirectDependency = await packageManager
     .getAllDependencies()
-    .then((deps) => Boolean(deps['typescript']));
+    .then((deps) => Boolean(deps.typescript));
 
   const typescriptVersion = await packageManager.getPackageVersion('typescript');
   const prettierVersion = await packageManager.getPackageVersion('prettier');

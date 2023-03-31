@@ -157,6 +157,7 @@ export interface CLIOptions {
   versionUpdates?: boolean;
   docs?: boolean;
   debugWebpack?: boolean;
+  debugRspack?: boolean;
   webpackStatsJson?: string | boolean;
   outputDir?: string;
 }
