@@ -4848,7 +4848,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pmmmwh/react-refresh-webpack-plugin@npm:^0.5.1, @pmmmwh/react-refresh-webpack-plugin@npm:^0.5.5":
+"@pmmmwh/react-refresh-webpack-plugin@npm:0.5.10, @pmmmwh/react-refresh-webpack-plugin@npm:^0.5.1, @pmmmwh/react-refresh-webpack-plugin@npm:^0.5.5":
   version: 0.5.10
   resolution: "@pmmmwh/react-refresh-webpack-plugin@npm:0.5.10"
   dependencies:
@@ -5427,9 +5427,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rspack/binding-darwin-arm64@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding-darwin-arm64@npm:0.2.10"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
 "@rspack/binding-darwin-x64@npm:0.1.1":
   version: 0.1.1
   resolution: "@rspack/binding-darwin-x64@npm:0.1.1"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@rspack/binding-darwin-x64@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding-darwin-x64@npm:0.2.10"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -5441,9 +5455,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rspack/binding-linux-arm64-gnu@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding-linux-arm64-gnu@npm:0.2.10"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
 "@rspack/binding-linux-arm64-musl@npm:0.1.1":
   version: 0.1.1
   resolution: "@rspack/binding-linux-arm64-musl@npm:0.1.1"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@rspack/binding-linux-arm64-musl@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding-linux-arm64-musl@npm:0.2.10"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
@@ -5455,9 +5483,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rspack/binding-linux-x64-gnu@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding-linux-x64-gnu@npm:0.2.10"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
 "@rspack/binding-linux-x64-musl@npm:0.1.1":
   version: 0.1.1
   resolution: "@rspack/binding-linux-x64-musl@npm:0.1.1"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@rspack/binding-linux-x64-musl@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding-linux-x64-musl@npm:0.2.10"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
@@ -5469,6 +5511,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rspack/binding-win32-arm64-msvc@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding-win32-arm64-msvc@npm:0.2.10"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
 "@rspack/binding-win32-ia32-msvc@npm:0.1.1":
   version: 0.1.1
   resolution: "@rspack/binding-win32-ia32-msvc@npm:0.1.1"
@@ -5476,9 +5525,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rspack/binding-win32-ia32-msvc@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding-win32-ia32-msvc@npm:0.2.10"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
 "@rspack/binding-win32-x64-msvc@npm:0.1.1":
   version: 0.1.1
   resolution: "@rspack/binding-win32-x64-msvc@npm:0.1.1"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@rspack/binding-win32-x64-msvc@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding-win32-x64-msvc@npm:0.2.10"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -5516,6 +5579,42 @@ __metadata:
     "@rspack/binding-win32-x64-msvc":
       optional: true
   checksum: 6bdf5ebc094f9d5437c5b4712a82303e5ed18a3b8e054883f7e3cbba4e91e31094aa6024ef9a73f7bfc52f536051701578edc934d72279755d4c5c052683ad75
+  languageName: node
+  linkType: hard
+
+"@rspack/binding@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/binding@npm:0.2.10"
+  dependencies:
+    "@rspack/binding-darwin-arm64": 0.2.10
+    "@rspack/binding-darwin-x64": 0.2.10
+    "@rspack/binding-linux-arm64-gnu": 0.2.10
+    "@rspack/binding-linux-arm64-musl": 0.2.10
+    "@rspack/binding-linux-x64-gnu": 0.2.10
+    "@rspack/binding-linux-x64-musl": 0.2.10
+    "@rspack/binding-win32-arm64-msvc": 0.2.10
+    "@rspack/binding-win32-ia32-msvc": 0.2.10
+    "@rspack/binding-win32-x64-msvc": 0.2.10
+  dependenciesMeta:
+    "@rspack/binding-darwin-arm64":
+      optional: true
+    "@rspack/binding-darwin-x64":
+      optional: true
+    "@rspack/binding-linux-arm64-gnu":
+      optional: true
+    "@rspack/binding-linux-arm64-musl":
+      optional: true
+    "@rspack/binding-linux-x64-gnu":
+      optional: true
+    "@rspack/binding-linux-x64-musl":
+      optional: true
+    "@rspack/binding-win32-arm64-msvc":
+      optional: true
+    "@rspack/binding-win32-ia32-msvc":
+      optional: true
+    "@rspack/binding-win32-x64-msvc":
+      optional: true
+  checksum: 8756ea74c46ba2380c67a0ae9f6fce43c7c3ac6b8c8441cc4cb524750bc956feb40eb9d6e31bca640235b275db007226650e48db50a84b9f33479ec23b90b41a
   languageName: node
   linkType: hard
 
@@ -5560,6 +5659,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rspack/core@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/core@npm:0.2.10"
+  dependencies:
+    "@rspack/binding": 0.2.10
+    "@rspack/dev-client": 0.2.10
+    "@swc/helpers": 0.5.1
+    browserslist: ^4.21.3
+    compare-versions: 6.0.0-rc.1
+    enhanced-resolve: 5.12.0
+    graceful-fs: 4.2.10
+    neo-async: 2.6.2
+    react-refresh: 0.14.0
+    schema-utils: ^4.0.0
+    tapable: 2.2.1
+    util: 0.12.5
+    watchpack: ^2.4.0
+    webpack-sources: 3.2.3
+    zod: ^3.21.4
+    zod-validation-error: 1.2.0
+  checksum: 3e6c3b4223689e5af877bbf77507d7fce093a97aba9a9907ff0c80349b40c2be82e156139620240d2738ae555036fa3922e45d9300dd020e79d5140c2610464b
+  languageName: node
+  linkType: hard
+
 "@rspack/dev-client@npm:0.1.1":
   version: 0.1.1
   resolution: "@rspack/dev-client@npm:0.1.1"
@@ -5578,6 +5701,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rspack/dev-client@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/dev-client@npm:0.2.10"
+  dependencies:
+    "@pmmmwh/react-refresh-webpack-plugin": 0.5.10
+  peerDependencies:
+    react-refresh: ">=0.10.0 <1.0.0"
+  peerDependenciesMeta:
+    react-refresh:
+      optional: true
+  checksum: 40da483508a71a6be569c8df9a17ad5e8fd21670207f4cc9bde4fa11bfa74341f0b2aa3d9e60fe95f0bf42e02d9232841c72accb81c27fb4462ef8a2d8836cfb
+  languageName: node
+  linkType: hard
+
 "@rspack/dev-middleware@npm:0.1.1":
   version: 0.1.1
   resolution: "@rspack/dev-middleware@npm:0.1.1"
@@ -5586,6 +5723,16 @@ __metadata:
     mime-types: 2.1.35
     webpack-dev-middleware: 6.0.0
   checksum: cd6b9b32889fc4aa373335d11e98f48d110dad1875542db744b8f5dbb48c2a7e0daeb5dc19f5d62a443a330640cf46eaaa37ee4284caa0a0c4d15b9379b35846
+  languageName: node
+  linkType: hard
+
+"@rspack/dev-middleware@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/dev-middleware@npm:0.2.10"
+  dependencies:
+    "@rspack/core": 0.2.10
+    webpack-dev-middleware: 6.0.2
+  checksum: 26ccb8094cae4d2469aac23b64ad5a721c86a5fa6503a23809d3b2cda46955974e762fda6c63a57139dd6ac0ac736c0389996dff7915ca3e876c6812209f7cef
   languageName: node
   linkType: hard
 
@@ -5608,17 +5755,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rspack/plugin-html@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "@rspack/plugin-html@npm:0.1.1"
+"@rspack/plugin-html@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@rspack/plugin-html@npm:0.2.10"
   dependencies:
-    "@rspack/core": 0.1.1
     "@types/html-minifier-terser": 7.0.0
     html-minifier-terser: 7.0.0
     lodash.template: ^4.5.0
     parse5: 7.1.1
     tapable: 2.2.1
-  checksum: f255df16a9c59f4057d6afdd6b58d517e134e63998abac7145ecd4118ed75473c521da4cc6d5c0444dbbb906fd77c6f39b38bec30501ae30a9fdb0e816046e43
+  peerDependencies:
+    "@rspack/core": 0.2.10
+  peerDependenciesMeta:
+    "@rspack/core":
+      optional: true
+  checksum: 54638098ce525c76ecb5bf1edd94de538d11abe1607930897bfae8d8777f3c772137ae6a696eba38e3a90e32ee11f6a780311ac626fc04d7eeed031f10d9323c
   languageName: node
   linkType: hard
 
@@ -6552,16 +6703,20 @@ __metadata:
   linkType: soft
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@storybook/builder-vite@workspace:*, @storybook/builder-vite@workspace:builders/builder-vite":
 =======
 "@storybook/builder-rspack@7.0.0-rc.11, @storybook/builder-rspack@workspace:lib/builder-rspack":
+=======
+"@storybook/builder-rspack@7.0.0-rc.12, @storybook/builder-rspack@workspace:lib/builder-rspack":
+>>>>>>> b3875328fa (chore: upgrade rspack)
   version: 0.0.0-use.local
   resolution: "@storybook/builder-rspack@workspace:lib/builder-rspack"
   dependencies:
     "@babel/core": ^7.12.10
-    "@rspack/core": 0.1.1
-    "@rspack/dev-middleware": 0.1.1
-    "@rspack/plugin-html": ^0.1.1
+    "@rspack/core": 0.2.10
+    "@rspack/dev-middleware": 0.2.10
+    "@rspack/plugin-html": 0.2.10
     "@storybook/addons": 7.0.0-rc.11
     "@storybook/api": 7.0.0-rc.11
     "@storybook/channel-postmessage": 7.0.0-rc.11
@@ -6572,7 +6727,7 @@ __metadata:
     "@storybook/components": 7.0.0-rc.11
     "@storybook/core-common": 7.0.0-rc.11
     "@storybook/core-events": 7.0.0-rc.11
-    "@storybook/core-rspack": 7.0.0-rc.11
+    "@storybook/core-rspack": 7.0.0-rc.12
     "@storybook/global": ^5.0.0
     "@storybook/manager-api": 7.0.0-rc.11
     "@storybook/node-logger": 7.0.0-rc.11
@@ -7141,11 +7296,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-rspack@7.0.0-rc.11, @storybook/core-rspack@workspace:lib/core-rspack":
+"@storybook/core-rspack@7.0.0-rc.12, @storybook/core-rspack@workspace:lib/core-rspack":
   version: 0.0.0-use.local
   resolution: "@storybook/core-rspack@workspace:lib/core-rspack"
   dependencies:
-    "@rspack/core": 0.1.1
+    "@rspack/core": 0.2.10
     "@storybook/core-common": 7.0.0-rc.11
     "@storybook/node-logger": 7.0.0-rc.11
     "@storybook/types": 7.0.0-rc.11
@@ -7822,17 +7977,21 @@ __metadata:
   linkType: soft
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@storybook/preset-react-webpack@workspace:*, @storybook/preset-react-webpack@workspace:presets/react-webpack":
 =======
 "@storybook/preset-react-rspack@7.0.0-rc.11, @storybook/preset-react-rspack@workspace:presets/react-rspack":
+=======
+"@storybook/preset-react-rspack@7.0.0-rc.12, @storybook/preset-react-rspack@workspace:presets/react-rspack":
+>>>>>>> b3875328fa (chore: upgrade rspack)
   version: 0.0.0-use.local
   resolution: "@storybook/preset-react-rspack@workspace:presets/react-rspack"
   dependencies:
     "@babel/plugin-syntax-jsx": ^7.18.6
     "@babel/plugin-syntax-typescript": ^7.20.0
     "@babel/preset-react": ^7.18.6
-    "@rspack/core": 0.1.1
-    "@storybook/core-rspack": 7.0.0-rc.11
+    "@rspack/core": 0.2.10
+    "@storybook/core-rspack": 7.0.0-rc.12
     "@storybook/docs-tools": 7.0.0-rc.11
     "@storybook/node-logger": 7.0.0-rc.11
     "@storybook/react": 7.0.0-rc.11
@@ -8172,8 +8331,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-rspack@workspace:frameworks/react-rspack"
   dependencies:
-    "@storybook/builder-rspack": 7.0.0-rc.11
-    "@storybook/preset-react-rspack": 7.0.0-rc.11
+    "@storybook/builder-rspack": 7.0.0-rc.12
+    "@storybook/preset-react-rspack": 7.0.0-rc.12
     "@storybook/react": 7.0.0-rc.11
     "@types/node": ^16.0.0
     jest-specific-snapshot: ^7.0.0
@@ -9311,9 +9470,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@swc/jest@npm:^0.2.26":
   version: 0.2.27
   resolution: "@swc/jest@npm:0.2.27"
+=======
+"@swc/helpers@npm:0.5.1":
+  version: 0.5.1
+  resolution: "@swc/helpers@npm:0.5.1"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: 2e2272c8278351670e1daf27cc634ace793afb378dcc85be2800d30a7b4d3afad37707371ead2a6d96662fa30294da678d66cdc4dc7f3e698bd8e111235c60fc
+  languageName: node
+  linkType: hard
+
+"@swc/jest@npm:^0.2.24":
+  version: 0.2.24
+  resolution: "@swc/jest@npm:0.2.24"
+>>>>>>> b3875328fa (chore: upgrade rspack)
   dependencies:
     "@jest/create-cache-key-function": ^27.4.2
     jsonc-parser: ^3.2.0
@@ -14213,6 +14387,13 @@ __metadata:
     array-ify: ^1.0.0
     dot-prop: ^5.1.0
   checksum: 78bd4dd4ed311a79bd264c9e13c36ed564cde657f1390e699e0f04b8eee1fc06ffb8698ce2dfb5fbe7342d509579c82d4e248f08915b708f77f7b72234086cc3
+  languageName: node
+  linkType: hard
+
+"compare-versions@npm:6.0.0-rc.1":
+  version: 6.0.0-rc.1
+  resolution: "compare-versions@npm:6.0.0-rc.1"
+  checksum: a9cc819ef3ac9ee1306de670241ad02457a833ea6c7c11a5ece80d7cbef8ab2d87fc56a89a9024bd023461db7a72fc707073e1a4ea8f27a0d04c15d1fa8829df
   languageName: node
   linkType: hard
 
@@ -32278,6 +32459,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "util.promisify@npm:~1.0.0":
   version: 1.0.1
   resolution: "util.promisify@npm:1.0.1"
@@ -32291,6 +32473,9 @@ __metadata:
   linkType: hard
 
 "util@npm:^0.12.0, util@npm:^0.12.4":
+=======
+"util@npm:0.12.5, util@npm:^0.12.0, util@npm:^0.12.4":
+>>>>>>> b3875328fa (chore: upgrade rspack)
   version: 0.12.5
   resolution: "util@npm:0.12.5"
   dependencies:
@@ -33036,7 +33221,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-dev-middleware@npm:*":
+"webpack-dev-middleware@npm:*, webpack-dev-middleware@npm:6.0.2":
   version: 6.0.2
   resolution: "webpack-dev-middleware@npm:6.0.2"
 >>>>>>> 18aa2d66e8 (feat: :sparkles: support rspack as preview builder)
@@ -33978,6 +34163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "yocto-queue@npm:^1.0.0":
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
@@ -33986,15 +34172,33 @@ __metadata:
   linkType: hard
 
 "zod@npm:3.21.4":
+=======
+"zod-validation-error@npm:1.2.0":
+  version: 1.2.0
+  resolution: "zod-validation-error@npm:1.2.0"
+  peerDependencies:
+    zod: ^3.18.0
+  checksum: 1763eb8e13d142fbad584fd7adae03a0a50e115792aa87a3b8257e103efed7fb2b01f08f8d0181146ce6bfd0660bb5b5c3a8eb462a465797b0f978a3d92ad50c
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.21.4":
+>>>>>>> b3875328fa (chore: upgrade rspack)
   version: 3.21.4
   resolution: "zod@npm:3.21.4"
   checksum: 161e8cf7aea38a99244d65da4a9477d9d966f6a533e503feaa20ff7968a9691065c38c6f1eab5cbbdc8374142fff4a05c9cacb8479803ab50ab6a6ca80e5d624
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "zone.js@npm:^0.13.0":
   version: 0.13.1
   resolution: "zone.js@npm:0.13.1"
+=======
+"zone.js@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "zone.js@npm:0.12.0"
+>>>>>>> b3875328fa (chore: upgrade rspack)
   dependencies:
     tslib: ^2.3.0
   checksum: 3f04ded7d2f5496befbce030aa57ba58d1c604795445e555af1a0079fc9938d0a0a9c128fdbff13563423ea2e2956549383629e39c59a7f1d8d3362deacc5e5b

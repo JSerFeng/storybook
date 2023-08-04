@@ -1,6 +1,6 @@
 {
   "name": "@storybook/preset-react-rspack",
-  "version": "7.0.0-rc.11",
+  "version": "7.0.0-rc.12",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -54,8 +54,8 @@
   },
   "dependencies": {
     "@babel/plugin-syntax-typescript": "^7.20.0",
-    "@rspack/core": "0.1.1",
-    "@storybook/core-rspack": "7.0.0-rc.11",
+    "@rspack/core": "0.2.10",
+    "@storybook/core-rspack": "7.0.0-rc.12",
     "@storybook/docs-tools": "7.0.0-rc.11",
     "@storybook/node-logger": "7.0.0-rc.11",
     "@storybook/react": "7.0.0-rc.11",
