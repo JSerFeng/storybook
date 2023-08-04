@@ -11,9 +11,8 @@ import { loadCsf } from '@storybook/csf-tools';
 import { logger } from '@storybook/node-logger';
 import { ensureReactPeerDeps } from './ensure-react-peer-deps';
 
-async function applyConfig(
-  bundler: 'webpack' | 'rspack',
-  config: any,
+async function webpack(
+  webpackConfig: any = {},
   options: Options & {
     /**
      * @deprecated
@@ -30,9 +29,11 @@ async function applyConfig(
     csfPluginOptions: CsfPluginOptions | null;
     jsxOptions?: JSXOptions;
     mdxPluginOptions?: CompileOptions;
-  }
+  } /* & Parameters<
+      typeof createCompiler
+    >[0] */
 ) {
-  const { module = {} } = config;
+  const { module = {} } = webpackConfig;
 
   // it will reuse babel options that are already in use in storybook
   // also, these babel options are chained with other presets.
@@ -86,12 +87,12 @@ async function applyConfig(
     : require.resolve('@storybook/mdx2-csf/loader');
 
   const result = {
-    ...config,
+    ...webpackConfig,
     plugins: [
-      ...(config.plugins || []),
+      ...(webpackConfig.plugins || []),
 
       ...(csfPluginOptions
-        ? [(await import('@storybook/csf-plugin'))[bundler](csfPluginOptions)]
+        ? [(await import('@storybook/csf-plugin')).webpack(csfPluginOptions)]
         : []),
     ],
 

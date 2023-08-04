@@ -1,7 +1,7 @@
 import { rspack } from '@rspack/core';
 import type { Stats, Configuration, StatsOptions } from '@rspack/core';
 
-import rspackDevMiddleware from '@rspack/dev-middleware';
+import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import { logger } from '@storybook/node-logger';
 import type { Builder, Options } from '@storybook/types';
@@ -21,7 +21,7 @@ export const printDuration = (startTime: [number, number]) =>
 
 const wrapForPnP = (input: string) => dirname(require.resolve(join(input, 'package.json')));
 
-let compilation: ReturnType<typeof rspackDevMiddleware> | undefined;
+let compilation: ReturnType<typeof webpackDevMiddleware> | undefined;
 let reject: (reason?: any) => void;
 
 type RspackBuilder = Builder<Configuration, Stats>;
@@ -133,14 +133,14 @@ const starter: StarterFunction = async function* starterGeneratorFn({
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   config.builtins!.progress = true;
 
-  const middlewareOptions: Parameters<typeof rspackDevMiddleware>[1] = {
+  const middlewareOptions: Parameters<typeof webpackDevMiddleware>[1] = {
     publicPath: config.output?.publicPath as string,
     writeToDisk: true,
   };
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore TODO
-  compilation = rspackDevMiddleware(compiler, middlewareOptions);
+  compilation = webpackDevMiddleware(compiler, middlewareOptions);
 
   const previewResolvedDir = wrapForPnP('@storybook/preview');
   const previewDirOrigin = join(previewResolvedDir, 'dist');

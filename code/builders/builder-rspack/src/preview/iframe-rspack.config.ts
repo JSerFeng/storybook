@@ -4,7 +4,8 @@ import fs, { writeFile } from 'fs-extra';
 
 import HtmlPlugin from '@rspack/plugin-html';
 import slash from 'slash';
-
+import remarkSlug from 'remark-slug';
+import remarkExternalLinks from 'remark-external-links';
 import type { Options, CoreConfig, DocsOptions, PreviewAnnotation } from '@storybook/types';
 import { globals } from '@storybook/preview/globals';
 import {
@@ -15,8 +16,9 @@ import {
   loadPreviewOrConfigFile,
 } from '@storybook/core-common';
 import { dedent } from 'ts-dedent';
-import { promise as glob } from 'glob-promise';
+import { glob } from 'glob';
 import { toImportFn } from '@storybook/core-rspack';
+import type { JSXOptions, CompileOptions } from '@storybook/mdx2-csf';
 import type { TypescriptOptions } from '../types';
 
 const wrapForPnP = (input: string) => dirname(require.resolve(join(input, 'package.json')));
@@ -61,7 +63,12 @@ export async function listStories(options: Options) {
 }
 
 export default async (
-  options: Options & Record<string, any> & { typescriptOptions: TypescriptOptions }
+  options: Options &
+    Record<string, any> & {
+      typescriptOptions: TypescriptOptions;
+      jsxOptions?: JSXOptions;
+      mdxPluginOptions?: CompileOptions;
+    }
 ): Promise<Configuration> => {
   const {
     outputDir = join('.', 'public'),
@@ -71,6 +78,8 @@ export default async (
     previewUrl,
     features,
     serverChannelUrl,
+    mdxPluginOptions,
+    jsxOptions,
   } = options;
 
   const isProd = configType === 'PRODUCTION';
@@ -150,6 +159,25 @@ export default async (
   //       }
   //     : {};
 
+  const mdxLoaderOptions: CompileOptions = await options.presets.apply('mdxLoaderOptions', {
+    skipCsf: true,
+    ...mdxPluginOptions,
+    mdxCompileOptions: {
+      providerImportSource: '@storybook/addon-docs/mdx-react-shim',
+      ...mdxPluginOptions?.mdxCompileOptions,
+      remarkPlugins: [remarkSlug, remarkExternalLinks].concat(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        mdxPluginOptions?.mdxCompileOptions?.remarkPlugins ?? []
+      ),
+    },
+    jsxOptions,
+  });
+
+  const mdxLoader = features?.legacyMdx1
+    ? require.resolve('@storybook/mdx1-csf/loader')
+    : require.resolve('@storybook/mdx2-csf/loader');
+
   if (!template) {
     throw new Error(dedent`
       Storybook's Rspack builder requires a template to be specified.
@@ -192,6 +220,16 @@ export default async (
         {
           test: /\.md$/,
           type: 'asset/source',
+        },
+        {
+          test: /\.mdx$/,
+          exclude: /(stories|story)\.mdx$/,
+          use: [
+            {
+              loader: mdxLoader,
+              options: mdxLoaderOptions,
+            },
+          ],
         },
       ],
     },

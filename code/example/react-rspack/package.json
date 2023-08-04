@@ -1,12 +1,12 @@
 {
   "name": "rspack-react-starter",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "dev": "rspack serve",
     "build": "rspack build",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "dev": "rspack serve",
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -14,16 +14,16 @@
   },
   "devDependencies": {
     "@rspack/cli": "0.1.1",
-    "@storybook/addon-essentials": "^7.0.0-rc.11",
-    "@storybook/addon-interactions": "^7.0.0-rc.11",
-    "@storybook/addon-links": "^7.0.0-rc.11",
-    "@storybook/blocks": "^7.0.0-rc.11",
-    "@storybook/react": "^7.0.0-rc.11",
-    "@storybook/react-webpack5": "^7.0.0-rc.11",
+    "@storybook/addon-essentials": "workspace:*",
+    "@storybook/addon-interactions": "workspace:*",
+    "@storybook/addon-links": "workspace:*",
+    "@storybook/blocks": "workspace:*",
+    "@storybook/react": "workspace:*",
+    "@storybook/react-webpack5": "workspace:*",
     "@storybook/testing-library": "^0.0.14-next.1",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
     "prop-types": "^15.8.1",
-    "storybook": "^7.0.0-rc.11"
+    "storybook": "workspace:*"
   }
 }
